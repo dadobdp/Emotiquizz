@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
 public class DbManager {
+	//test
 	
 	private DbHelper dbHelper;
 	private Context context;
