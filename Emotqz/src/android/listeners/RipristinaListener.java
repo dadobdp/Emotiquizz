@@ -29,12 +29,11 @@ public class RipristinaListener implements OnClickListener {
 		
 		AlertDialog.Builder ripristinaAlert = new AlertDialog.Builder(context);
 		ripristinaAlert.setTitle("Ripristina Impostazioni");
-		ripristinaAlert.setMessage("L'operazione e' irreversibile.\nVuoi davvero procedere al ripristino?");
+		ripristinaAlert.setMessage("L'operazione e' irreversibile.\nVuoi davvero azzerare tutti i tuoi progressi?");
 		ripristinaAlert.setPositiveButton("Ripristina", new RipristinaImpostazioniListener());
 		ripristinaAlert.setNegativeButton("Annulla", null);
 		ripristinaAlert.setIcon(R.drawable.icon);
 		AlertDialog alert = ripristinaAlert.create();
 		alert.show();
-
 	}
 }

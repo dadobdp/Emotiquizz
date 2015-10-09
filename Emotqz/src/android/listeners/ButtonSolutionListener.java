@@ -62,13 +62,9 @@ public class ButtonSolutionListener implements OnClickListener {
 				//INCREMENTA i coins di 100
 				gestoreInput.setCoins(100);
 			
-				//gestoreSalvataggi.saveCoins(gestoreInput.getCoins());
-				//gestoreSalvataggi.saveDbCoins(gestoreInput.getCoins());
 				gestoreInput.getDbManager().saveCoins(gestoreInput.getCoins());
 				liv.setCompletato(true);
-				
-				//gestoreSalvataggi.SaveState(categoria, stage, livello);
-				//gestoreSalvataggi.saveDbstate(categoria, stage, livello);
+			
 				gestoreInput.getDbManager().saveLevelCompleted(categoria, stage, livello);
 				
 				gestoreInput.setStageBloccati();
@@ -80,9 +76,7 @@ public class ButtonSolutionListener implements OnClickListener {
 					
 					if (stg.getLivelliCompletati() == stg.getLivelli().size()) {
 						gestoreInput.setCoins(100);
-						
-						//gestoreSalvataggi.saveCoins(gestoreInput.getCoins());
-						//gestoreSalvataggi.saveDbCoins(gestoreInput.getCoins());
+					
 						gestoreInput.getDbManager().saveCoins(gestoreInput.getCoins());
 						
 						stg.setCompletato(true);
@@ -136,13 +130,15 @@ public class ButtonSolutionListener implements OnClickListener {
 		miaAlert.setTitle("Livello Completato");
 		
 		if (prima!=dopo) {
-			miaAlert.setMessage("Complimenti! Hai superato il livello!\nHai sbloccato lo stage successivo!");
+			miaAlert.setMessage("Complimenti! Hai sbloccato lo stage successivo!");
+			miaAlert.setIcon(R.drawable.strong);
 		}else{
 			miaAlert.setMessage("Complimenti! Hai superato il livello!");
+			miaAlert.setIcon(R.drawable.applause);
 		}
 		
 		miaAlert.setPositiveButton("Passa al livello successivo", new NextLevelListener(context,categoria, stage, livello));
-		miaAlert.setIcon(R.drawable.applause);
+		
 		AlertDialog alert = miaAlert.create();
 		alert.show();
 		
@@ -157,7 +153,7 @@ public class ButtonSolutionListener implements OnClickListener {
 		miaAlert.setTitle("Stage Completato");
 		miaAlert.setMessage("Complimenti! Hai superato tutti i livelli dello stage!");
 		miaAlert.setPositiveButton("Ok", new NextStageListener(context));
-		miaAlert.setIcon(R.drawable.applause);
+		miaAlert.setIcon(R.drawable.top);
 		AlertDialog alert = miaAlert.create();
 		alert.show();
 		

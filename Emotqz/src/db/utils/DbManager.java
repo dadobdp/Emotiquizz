@@ -8,16 +8,24 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
+/**
+ * Classe che si occupa della comunicazione con il database
+ * Gestisce lettura e scrittura di:
+ * 1) livelli completati
+ * 2) hints comprati
+ * 3) goins guadagnati
+ * 
+ * Permette inoltre di azzerare i progressi
+ * @author macbook
+ *
+ */
 public class DbManager {
-	//test
-	
+
 	private DbHelper dbHelper;
-	private Context context;
 	
 	private GestoreInput gestoreInput = GestoreInput.getGestore();
 	
 	public DbManager(Context context) {
-		this.context=context;
 		dbHelper = new DbHelper(context);
 	}
 	
@@ -26,7 +34,6 @@ public class DbManager {
 		caricaSalvataggi();
 		caricaHints();
 		caricaCoins();
-		
 	}
 	
 	private void caricaSalvataggi(){
@@ -43,11 +50,11 @@ public class DbManager {
                 Livello liv = gestoreInput.getCategorie().get(gestoreInput.getCatToInt().get(cat)).getStages().get(stg).getLivelli().get(lv);
 				liv.setCompletato(true);
 
-                
                 cursor.moveToNext();
             }
         }
 	}
+	
 	private void caricaHints(){
 		
 		Cursor cursor = getTable(DbStrings.TBL_HINTS);
@@ -64,12 +71,10 @@ public class DbManager {
 						.get(gestoreInput.getCatToInt().get(cat))
 						.getStages().get(stg).getLivelli().get(lv);
 				livello.getHintSbloccati()[hint] = 1;
-
-                
+ 
                 cursor.moveToNext();
             }
         }
-		
 	}
 	
 	private void caricaCoins(){
@@ -80,10 +85,8 @@ public class DbManager {
 		
 		if(cursor .moveToFirst()){
 				coins = Integer.parseInt(cursor.getString(cursor.getColumnIndex(DbStrings.COINS)));
-		}
-		
-		gestoreInput.setCoins(coins);
-		
+		}		
+		gestoreInput.setCoins(coins);	
 	}
 
 	public void saveLevelCompleted(int categoria, int stage, int lv){
@@ -126,8 +129,7 @@ public class DbManager {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-		
+		}	
 	}
 	
 	public void saveCoins(int coins){
@@ -144,8 +146,7 @@ public class DbManager {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-		
+		}	
 	}
 	
 	public Cursor getTable(String tbl_name){
@@ -167,11 +168,5 @@ public class DbManager {
 		db.delete(DbStrings.TBL_HINTS, null, null);
 		db.delete(DbStrings.TBL_COINS, null, null);
 		
-		//TODO vedere se si ripristano piu volte che si blocca
-		
-		context.deleteDatabase("myDb");
 	}
-	
-	
-
 }

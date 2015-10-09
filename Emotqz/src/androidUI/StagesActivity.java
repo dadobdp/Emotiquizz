@@ -14,6 +14,8 @@ import android.widget.TextView;
 
 import com.emotqz.R;
 
+import db.utils.DbStrings;
+
 public class StagesActivity extends Activity {
 
 	private GestoreInput gestoreInput = GestoreInput.getGestore();
@@ -25,9 +27,11 @@ public class StagesActivity extends Activity {
 
 		int categoria = getIntent().getIntExtra("CATEGORIE", 0);
 		
+		DbStrings strings = new DbStrings();
+		String cat = strings.getMappaCategorie().get(gestoreInput.getCategorie().get(categoria).getNome());
 		
 		TextView textView = (TextView)findViewById(R.id.categoryNumber);
-		textView.setText("Categoria: "+gestoreInput.getCategorie().get(categoria).getNome());
+		textView.setText(cat);
 		
 		ListView listView = (ListView) findViewById(R.id.categoryList);
 	
@@ -36,9 +40,9 @@ public class StagesActivity extends Activity {
 		for (int i = 0; i < gestoreInput.getCategorie().get(categoria).getStages().size(); i++) {
 			
 			if (gestoreInput.getCategorie().get(categoria).getStages().get(i).isBloccato()) {
-				imageElements.add(new ImageElement("Stage" + (i + 1), R.drawable.stage_button_locked_shade));
+				imageElements.add(new ImageElement("Stage " + (i + 1), R.drawable.stage_button_locked_shade));
 			}else{
-				imageElements.add(new ImageElement("Stage" + (i + 1), R.drawable.stage_button_shade));
+				imageElements.add(new ImageElement("Stage " + (i + 1), R.drawable.stage_button_shade));
 			}		
 		}
 		
