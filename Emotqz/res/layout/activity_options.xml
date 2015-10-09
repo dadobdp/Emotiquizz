@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/sfondo"
+    android:gravity="top"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/options"
+        android:textColor="#FFFFFF"
+        android:textSize="40sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/howToPlayButton"
+            android:layout_width="wrap_content"
+            android:layout_height="120dp"
+            android:layout_marginTop="20sp"
+            android:background="@drawable/howtoplay_button"
+            android:onClick="onClick"
+            android:text="@string/howToPlayButton"
+            android:textColor="#000000"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/ripristinaButton"
+            android:layout_width="wrap_content"
+            android:layout_height="120dp"
+            android:layout_marginTop="20sp"
+            android:background="@drawable/ripristina_button"
+            android:onClick="onClick"
+            android:text="@string/ripristinaButton"
+            android:textColor="#000000"
+            android:textSize="25sp" />
+        
+        <Button
+            android:id="@+id/creditsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="120dp"
+            android:layout_marginTop="20sp"
+            android:background="@drawable/credits_button"
+            android:onClick="onClick"
+            android:text="@string/creditsButton"
+            android:textColor="#000000"
+            android:textSize="25sp" />
+        
+        </LinearLayout>
+        
+    </LinearLayout>

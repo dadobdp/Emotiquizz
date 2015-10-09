@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/sfondo"
+    android:orientation="vertical" >
+    
+    
+     <ImageView
+        android:id="@+id/carica"
+        android:src="@drawable/carica"
+        android:layout_height="150dp"
+        android:layout_width="150dp"
+        android:layout_marginTop="200dp"
+        android:layout_gravity="center"
+        android:contentDescription="@string/loading_image" />
+
+     <TextView
+         android:id="@+id/Titolo"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:fontFamily="sans-serif-condensed"
+         android:gravity="center|bottom"
+         android:text="@string/Caricamento"
+         android:textColor="#FFFFFF"
+         android:textSize="15pt"
+         android:textStyle="bold" />
+
+</LinearLayout>

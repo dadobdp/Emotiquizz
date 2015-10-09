@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Emotqz</string>
+    <string name="title_activity_main">Activity Main</string>
+    <string name="title_activity_options">OptionsActivity</string>
+    <string name="playButton">Play</string>
+    <string name="optionsButton">Opzioni</string>
+    <string name="ripristinaButton">Ripristina</string>
+    <string name="howToPlayButton">Tutorial</string>
+    <string name="creditsButton">Autori</string>
+    <string name="title_activity_categories">CategoriesActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_stages">StagesActivity</string>
+    <string name="title_activity_credits">CreditsActivity</string>
+    <string name="title_activity_levels">LevelsActivity</string>
+    <string name="title_activity_level">LevelActivity</string>
+    <string name="solution">La soluzione è:</string>
+    <string name="hint"></string>
+    <string name="verifyButton">verifica</string>
+    <string name="title_activity_loading">Emotqz</string>
+    <string name="loading_image">LoadingActivity</string>
+    <string name="title">title</string>
+    <string name="levels">Livelli</string>
+    <string name="categories">Categorie</string>
+    <string name="options">Opzioni</string>
+    <string name="stages">Stage</string>
+    <string name="credits">Autori</string>
+    <string name="level_completed">Level Completed</string>
+    <string name="coins_image">Coins Image</string>
+    <string name="main_image">Image on main Activity</string>
+    <string name="Caricamento">Caricamento&#8230;</string>
+    <string name="dado">Copyright \nDadon: Project Manager-Code Analist</string>
+    <string name="albo">Copyright \nAlbo: Project Manager-Domain Expert</string>
+    <string name="fede">Copyright \nGandu: Project Manager-Code Manager</string>
+    
+</resources>

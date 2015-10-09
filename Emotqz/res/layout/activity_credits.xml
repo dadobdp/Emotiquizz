@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/sfondo"
+    android:gravity="top"
+    android:orientation="vertical" >
+    
+     <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/CreditsTitle"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/credits"
+        android:textColor="#FFFFFF"
+        android:textSize="40sp" />
+    
+    <LinearLayout 
+        android:layout_marginTop="50dp"
+        android:id="@+id/DadoCredits"
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:gravity="center"
+    	android:orientation="horizontal">
+        
+        <ImageView 
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:id="@+id/DadoImage"
+            android:background="@drawable/dado"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:padding="20dp"
+            android:text="@string/dado"
+            android:textSize="20sp" />      
+    </LinearLayout>
+    <LinearLayout 
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:id="@+id/AlboCredit"
+    	android:gravity="center"
+    	android:orientation="horizontal">
+        
+        <ImageView 
+            android:layout_width="150dp"
+            android:id="@+id/AlboImage"
+            android:layout_height="150dp"
+            android:background="@drawable/albo"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:padding="20dp"
+            android:text="@string/albo"
+            android:textSize="20sp" />      
+    </LinearLayout>
+    <LinearLayout 
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:id="@+id/FedeCredit"
+    	android:gravity="center"
+    	android:orientation="horizontal">
+        
+        <ImageView 
+            android:layout_width="150dp"
+            android:id="@+id/FedeImage"
+            android:layout_height="150dp"
+            android:background="@drawable/gandu"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:padding="20dp"
+            android:text="@string/fede"
+            android:textSize="20sp" />      
+    </LinearLayout>
+    
+
+</LinearLayout>
