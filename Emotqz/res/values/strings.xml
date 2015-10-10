@@ -7,12 +7,13 @@
     <string name="playButton">Play</string>
     <string name="optionsButton">Opzioni</string>
     <string name="ripristinaButton">Ripristina</string>
-    <string name="howToPlayButton">Tutorial</string>
+    <string name="howToPlayButton">Aiuto</string>
     <string name="creditsButton">Autori</string>
     <string name="title_activity_categories">CategoriesActivity</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_stages">StagesActivity</string>
     <string name="title_activity_credits">CreditsActivity</string>
+    <string name="title_activity_howto">HowToPlayActivity</string>
     <string name="title_activity_levels">LevelsActivity</string>
     <string name="title_activity_level">LevelActivity</string>
     <string name="solution">La soluzione è:</string>

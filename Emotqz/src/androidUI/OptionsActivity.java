@@ -2,6 +2,7 @@ package androidUI;
 
 import android.app.Activity;
 import android.listeners.CreditsListener;
+import android.listeners.HowToPlayListener;
 import android.listeners.RipristinaListener;
 import android.os.Bundle;
 import android.widget.Button;
@@ -19,7 +20,7 @@ public class OptionsActivity extends Activity {
 		Button ripristinaButton = (Button) findViewById(R.id.ripristinaButton);
 		Button creditsButton = (Button) findViewById(R.id.creditsButton);
 		
-		howToPlayButton.setOnClickListener(null);//TODO
+		howToPlayButton.setOnClickListener(new HowToPlayListener(this));//TODO
 		ripristinaButton.setOnClickListener(new RipristinaListener(this));
 		creditsButton.setOnClickListener(new CreditsListener(this));
 

@@ -1,5 +1,5 @@
 /com/
-/db/
-/androidUI/
+/.gitignore
 /android/
-/gestori/
+/androidUI/
+/utilities_image/
