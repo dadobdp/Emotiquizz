@@ -11,6 +11,7 @@ public class HowToPlayActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		
 		setContentView(R.layout.activity_howto);
+		//TODO
 		
 		super.onCreate(savedInstanceState);
 	}
