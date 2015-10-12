@@ -2,6 +2,8 @@ package utilities_image;
 
 import java.util.List;
 
+import com.emotiquiz.R;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
@@ -10,8 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
-
-import com.emotqz.R;
 
 @SuppressLint("InflateParams")
 public class ElementsAdapter extends ArrayAdapter<ImageElement>{

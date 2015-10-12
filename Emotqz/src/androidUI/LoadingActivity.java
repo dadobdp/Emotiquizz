@@ -4,14 +4,13 @@ import gestori.GestoreInput;
 
 import java.io.IOException;
 
+import com.emotiquiz.R;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-
-import com.emotqz.R;
-
 import db.utils.DbManager;
 
 public class LoadingActivity extends Activity {

@@ -5,6 +5,8 @@ import gestori.GestoreInput;
 import java.io.IOException;
 import java.io.InputStream;
 
+import com.emotiquiz.R;
+
 import javaUtils.Livello;
 import android.app.Activity;
 import android.content.res.AssetManager;
@@ -24,8 +26,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
-
-import com.emotqz.R;
 
 public class LevelActivity extends Activity {
 

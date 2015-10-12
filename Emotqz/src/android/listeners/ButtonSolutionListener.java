@@ -3,6 +3,9 @@ package android.listeners;
 import gestori.GestoreInput;
 import javaUtils.Livello;
 import javaUtils.Stage;
+
+import com.emotiquiz.R;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -18,8 +21,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.emotqz.R;
 
 public class ButtonSolutionListener implements OnClickListener {
 

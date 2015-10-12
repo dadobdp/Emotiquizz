@@ -1,5 +1,7 @@
 package androidUI;
 
+import com.emotiquiz.R;
+
 import android.app.Activity;
 import android.graphics.Point;
 import android.listeners.OptionsListener;
@@ -10,8 +12,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
-
-import com.emotqz.R;
 
 public class MainActivity extends Activity {
 

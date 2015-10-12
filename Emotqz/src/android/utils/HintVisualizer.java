@@ -1,13 +1,13 @@
 package android.utils;
 
+import com.emotiquiz.R;
+
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import android.util.DisplayMetrics;
 import android.widget.TextView;
-
-import com.emotqz.R;
 
 public class HintVisualizer {
 	

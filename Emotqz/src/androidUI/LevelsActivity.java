@@ -4,6 +4,8 @@ import gestori.GestoreInput;
 
 import java.util.ArrayList;
 
+import com.emotiquiz.R;
+
 import javaUtils.Livello;
 import android.app.Activity;
 import android.graphics.Point;
@@ -13,8 +15,6 @@ import android.view.Display;
 import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.TextView;
-
-import com.emotqz.R;
 
 public class LevelsActivity extends Activity {
 

@@ -1,14 +1,15 @@
 package android.listeners;
 
 import gestori.GestoreInput;
+
+import com.emotiquiz.R;
+
 import android.app.AlertDialog;
 import android.content.Context;
 import android.listeners.dialog.ShowHintListener;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
-
-import com.emotqz.R;
 
 public class HintButtonListener implements OnClickListener {
 	private Context context;

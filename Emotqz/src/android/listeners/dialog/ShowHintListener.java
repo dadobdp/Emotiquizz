@@ -2,6 +2,9 @@ package android.listeners.dialog;
 
 import gestori.GestoreInput;
 import javaUtils.Livello;
+
+import com.emotiquiz.R;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -11,8 +14,6 @@ import android.media.MediaPlayer;
 import android.utils.HintVisualizer;
 import android.widget.Button;
 import android.widget.TextView;
-
-import com.emotqz.R;
 
 public class ShowHintListener implements DialogInterface.OnClickListener {
 

@@ -1,5 +1,7 @@
 package androidUI;
 
+import com.emotiquiz.R;
+
 import android.app.Activity;
 import android.graphics.Point;
 import android.os.Bundle;
@@ -9,8 +11,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
-
-import com.emotqz.R;
 
 public class CreditsActivity extends Activity {
 	

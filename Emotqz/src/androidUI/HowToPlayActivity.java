@@ -1,6 +1,6 @@
 package androidUI;
 
-import com.emotqz.R;
+import com.emotiquiz.R;
 
 import android.app.Activity;
 import android.os.Bundle;

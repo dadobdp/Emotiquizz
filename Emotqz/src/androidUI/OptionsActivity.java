@@ -1,13 +1,13 @@
 package androidUI;
 
+import com.emotiquiz.R;
+
 import android.app.Activity;
 import android.listeners.CreditsListener;
 import android.listeners.HowToPlayListener;
 import android.listeners.RipristinaListener;
 import android.os.Bundle;
 import android.widget.Button;
-
-import com.emotqz.R;
 
 public class OptionsActivity extends Activity {
 	

@@ -4,6 +4,8 @@ import gestori.GestoreInput;
 
 import java.util.ArrayList;
 
+import com.emotiquiz.R;
+
 import utilities_image.ElementsAdapter;
 import utilities_image.ImageElement;
 import android.annotation.SuppressLint;
@@ -11,8 +13,6 @@ import android.app.Activity;
 import android.listeners.StartStagesListener;
 import android.os.Bundle;
 import android.widget.ListView;
-
-import com.emotqz.R;
 
 @SuppressLint("DefaultLocale")
 public class CategoriesActivity extends Activity {

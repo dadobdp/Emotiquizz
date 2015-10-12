@@ -1,12 +1,12 @@
 package android.listeners;
 
+import com.emotiquiz.R;
+
 import android.app.AlertDialog;
 import android.content.Context;
 import android.listeners.dialog.RipristinaImpostazioniListener;
 import android.view.View;
 import android.view.View.OnClickListener;
-
-import com.emotqz.R;
 /**
  * Listener dell'onClick relativo al bottone Ripristina in Options.
  * questo listener mostra l'alert dialog per il ripristino delle impostazioni
