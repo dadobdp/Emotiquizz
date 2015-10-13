@@ -82,9 +82,13 @@ public class DbManager {
 		int coins = 0;
 		
 		Cursor cursor = getTable(DbStrings.TBL_COINS);
-		
+	
 		if(cursor .moveToFirst()){
+
+				//coins = Integer.parseInt(cursor.getString(cursor.getColumnIndex("")));
 				coins = Integer.parseInt(cursor.getString(cursor.getColumnIndex(DbStrings.COINS)));
+				Log.i("INFO", "Coins: "+coins);
+			
 		}		
 		gestoreInput.setCoins(coins);	
 	}
@@ -125,6 +129,7 @@ public class DbManager {
 		
 		try {
 			db.insert(DbStrings.TBL_HINTS, null, cv);
+			
 			Log.i("INFO", "Hint comprato: "+cat +" "+stage+" "+lv+" "+hint);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -139,14 +144,16 @@ public class DbManager {
 		ContentValues cv = new ContentValues();
 		
 		cv.put(DbStrings.COINS, coins);
+		cv.put("_id", 1);
 		
-		try {
-			db.insert(DbStrings.TBL_COINS, null, cv);
-			Log.i("INFO", "Coins totali: "+coins);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}	
+		long ins = db.insert(DbStrings.TBL_COINS,null,cv);
+
+		if(ins == -1){
+			int n = db.update(DbStrings.TBL_COINS,cv,null,null);
+			Log.i("INFO", "Colonne: "+n);
+		}
+			
+		Log.i("INFO", "Coins totali: "+coins);
 	}
 	
 	public Cursor getTable(String tbl_name){
@@ -167,6 +174,8 @@ public class DbManager {
 		db.delete(DbStrings.TBL_LIVELLI, null, null);
 		db.delete(DbStrings.TBL_HINTS, null, null);
 		db.delete(DbStrings.TBL_COINS, null, null);
+		
+		
 		
 	}
 }
