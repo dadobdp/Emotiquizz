@@ -60,7 +60,7 @@ public class LevelActivity extends Activity {
 		setLevelEmoticons(linearLayout, assetManager, liv, width);
 
 		LinearLayout.LayoutParams layoutParams = new LayoutParams(
-				LayoutParams.MATCH_PARENT, (width / 2));
+				LayoutParams.MATCH_PARENT, (width / 3));
 		linearLayout.setLayoutParams(layoutParams);
 				
 		setLevelButtonListeners(liv);
@@ -142,35 +142,30 @@ public class LevelActivity extends Activity {
 	//setta le emoticons
 	private void setLevelEmoticons(LinearLayout linearLayout,
 			AssetManager assetManager, Livello liv, int width) {
-		for (int i = 0; i < liv.getEmoticons().size(); i++) {
+		
+		int EmSize = 0;
+		int NofEmo = liv.getEmoticons().size();
+		
+		if (NofEmo<=6) {
+			 EmSize = width / (6);
+		} else {
+			 EmSize = width / (NofEmo);
+		}
+		
+		for (int i = 0; i < NofEmo; i++) {
+			
 			ImageView imageView = new ImageView(this);
 			InputStream is = null;
 			String emo = "Emo/" + liv.getEmoticons().get(i) + ".png";
+			
 			try {
 
 				is = assetManager.open(emo);
 				Bitmap bitmap = null;
 				bitmap = BitmapFactory.decodeStream(is);
 				imageView.setImageBitmap(bitmap);
-				int NOfEmo = liv.getEmoticons().size();
-				int EmSize = width / NOfEmo;
-
-				// TODO dimensione troppo piccola per due emoticon
-				if (NOfEmo == 1) {
-
-					EmSize = EmSize / 3;
-					linearLayout.addView(imageView, EmSize, EmSize);
-
-				} else if (NOfEmo == 2) {
-
-					EmSize = EmSize / 2;
-					linearLayout.addView(imageView, EmSize, EmSize);
-
-				} else {
-
-					linearLayout.addView(imageView, EmSize, EmSize);
-
-				}
+				linearLayout.addView(imageView, EmSize, EmSize);
+				
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

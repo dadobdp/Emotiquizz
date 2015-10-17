@@ -197,7 +197,7 @@ public class ButtonSolutionListener implements OnClickListener {
 			percentuale_soluzione = (int)(((float)soluzione.length()/5)*4);
 		}
 		
-		int diff = percentuale_soluzione-percentuale_inserita;
+		float diff = (((float)soluzione.length()/5)*4)-(((float)inserita.length()/5)*4);
 		
 		if (diff == 0) {
 			for (int i = 0; i < soluzione.length(); i++) {
