@@ -52,8 +52,13 @@ public class ButtonSolutionListener implements OnClickListener {
 		if (soluzione.equalsIgnoreCase(inserita)) {
 			
 			int count = 0;
-			boolean prima = gestoreInput.getCategorie().get(categoria).getStages().get(stage+1).isBloccato();
-					
+			
+			boolean prima = false;
+			
+			if(this.stage < gestoreInput.getCategorie().get(categoria).getStages().size()-1){
+				prima = gestoreInput.getCategorie().get(categoria).getStages().get(stage+1).isBloccato();
+			}
+			
 			Stage stg = gestoreInput.getCategorie().get(categoria).getStages()
 					.get(stage);
 			
@@ -123,7 +128,12 @@ public class ButtonSolutionListener implements OnClickListener {
 
 	private void livelloCompletato(boolean prima){
 		
-		boolean dopo = gestoreInput.getCategorie().get(categoria).getStages().get(stage+1).isBloccato();
+		boolean dopo = false;
+		
+		if(this.stage < gestoreInput.getCategorie().get(categoria).getStages().size()-1){
+			
+			dopo = gestoreInput.getCategorie().get(categoria).getStages().get(stage+1).isBloccato();
+		}
 			
 		MediaPlayer suonoRisposta = MediaPlayer.create(context, R.raw.applause);
 

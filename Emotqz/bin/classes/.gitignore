@@ -1,3 +1,9 @@
 /com/
 /.gitignore
 /android/
+/androidUI/
+/db/
+/gestori/
+/javaUtils/
+/tests/
+/utilities_image/
