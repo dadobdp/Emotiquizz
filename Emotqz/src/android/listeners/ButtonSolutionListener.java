@@ -14,6 +14,7 @@ import android.listeners.dialog.NextLevelListener;
 import android.listeners.dialog.NextStageListener;
 import android.media.MediaPlayer;
 import android.os.Vibrator;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -22,6 +23,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+@SuppressLint("DefaultLocale")
 public class ButtonSolutionListener implements OnClickListener {
 
 	private Context context;
@@ -175,76 +177,61 @@ public class ButtonSolutionListener implements OnClickListener {
 	@SuppressLint("DefaultLocale")
 	private boolean almost(String inserita){
 		
-		int percentuale_inserita;
-		int percentuale_soluzione;
-		int count = 0;
+		boolean almost = false;
+		boolean toCheck = false;
 		
-		if(soluzione.length() < 7){
-			
-			if (Math.abs(soluzione.length() - inserita.length()) > 1) {
-				return false;
-			}
-			
-			percentuale_soluzione = soluzione.length()-1;
-			
-			try {
-				for (int i = 0; i < percentuale_soluzione; i++) {
-					if (inserita.toLowerCase().charAt(i) == soluzione.toLowerCase().charAt(i)) {	
-						count ++;
-					}
-				}
-			} catch (Exception e) {
-				// nothing to catch
-			}
-			
-			if (count == percentuale_soluzione) {
-				return true;
-			}else{
-				return false;
-			}
-		}else{		
-			percentuale_inserita = (int)(((float)inserita.length()/5)*4);
-			percentuale_soluzione = (int)(((float)soluzione.length()/5)*4);
+		int limite=0;
+		
+		int l1 = soluzione.length();
+		int l2 = inserita.length();
+		
+		int str_minore = l1;
+		if (l1 > l2) {
+			str_minore = l2;
 		}
 		
-		float diff = (((float)soluzione.length()/5)*4)-(((float)inserita.length()/5)*4);
+		int distanza = Math.abs(l1 - l2);
 		
-		if (diff == 0) {
-			for (int i = 0; i < soluzione.length(); i++) {
-				if (inserita.toLowerCase().charAt(i) != soluzione.toLowerCase().charAt(i)) {	
-					count ++;
-				}
+		if(  ((l1 < 9) && distanza < 2)  ){
+			toCheck = true;
+			limite = 2;
+		}if (((l1 >= 9) && distanza < 5) ) {
+			toCheck = true;
+			limite = 5;
+		}
+	
+		if (toCheck) {
+				
+			String soluzione_invertita = new StringBuffer(soluzione).reverse().toString();
+			String inserita_invertita = new StringBuffer(inserita).reverse().toString();
+			
+			boolean forward_control = checkAlmost(limite, str_minore, soluzione, inserita);
+			boolean backward_control = checkAlmost(limite, str_minore, soluzione_invertita, inserita_invertita);
+			
+			if (backward_control || forward_control) {
+				almost = true;
+			}	
+		}
+		return almost;
+	}
+	
+	//controlla se la stringa è simile alla soluzione in base al limite passato.
+	private boolean checkAlmost(int limite, int str_minore, String s1, String s2){
+		
+		int count = 0;
+		
+		for (int i = 0; i < str_minore; i++) {
+			if( s1.toLowerCase().charAt(i) != s2.toLowerCase().charAt(i) ){
+				count++;
 			}
-			if (count > 2) {
-				return false;
-			}else{
-				return true;
-			}
+		}
+		Log.i("TEST", "count = "+count);
+		
+		if (count < limite) {
+			return true;
 		}else{
-			
-			if (Math.abs(diff)>2) {
-				return false;
-			}
-
-			try {
-				
-				for (int i = 0; i < percentuale_inserita; i++) {
-					if (inserita.toLowerCase().charAt(i) != soluzione.toLowerCase().charAt(i)) {	
-						count ++;
-					}
-				}
-				
-			} catch (Exception e) {
-				//nothing to catch
-			}
-			
-			if (count == 0) {
-				return true;
-			}else{
-				return false;
-			}
-				
-		}		
+			return false;
+		}	
 	}
 		
 	private void refreshCoins(){	
